@@ -11,10 +11,16 @@ def get_list():
 
 
 def get_single_user():
-    response_get_single = requests.get(f'{get_single}' + '/7')
+    response_get_single = requests.get(f'{get_single}' + '/2')
     assert response_get_single.status_code == 200
-    single = response_get_single.json()
-    print(single)
+    # single = response_get_single.json()['data']
+    # print(single)
+    email_adress = response_get_single.json()['data']['email']
+    lastname = response_get_single.json()['data']['last_name']
+    print(
+        '{', '"email": ', '"', email_adress, '"', ',',
+        '"last_name: "', '"', lastname, '"', '}'
+    )
 
 
 class Newuser:
