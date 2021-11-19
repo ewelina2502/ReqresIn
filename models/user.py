@@ -18,8 +18,8 @@ def get_single_user():
     email_adress = response_get_single.json()['data']['email']
     lastname = response_get_single.json()['data']['last_name']
     print(
-        '{', '"email": ', '"', email_adress, '"', ',',
-        '"last_name: "', '"', lastname, '"', '}'
+        '{', '"email": ', '"' + email_adress + '"', ',',
+        '"last_name": ', '"' + lastname + '"', '}'
     )
 
 
